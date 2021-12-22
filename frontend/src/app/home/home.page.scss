@@ -25,3 +25,28 @@
 #container a {
   text-decoration: none;
 }
+// ion-grid{
+//   display: flex;
+//   flex-direction: row;
+//   width: 100%;
+//   margin: 0;
+// }
+// ion-card{
+//   display: flex;
+//   flex-direction: row;
+//   width: 100%;
+//   margin: 50%;
+
+// }
+
+:root {
+  --ion-safe-area-top: 20px;
+  --ion-safe-area-bottom: 22px;
+}
+
+ion-col > div {
+  background-color: #f7f7f7;
+  border: solid 1px #ddd;
+  padding: 10px;
+}
+
