@@ -29,7 +29,9 @@ export class FormulairePage implements OnInit {
   async presentToast() {
     const toast = await this.toastController.create({
       message: 'Apprenant ajouté avec succès',
-      duration: 2000
+      color:'success',
+      duration: 2000,
+      position:'top',
     });
     toast.present();
   }
