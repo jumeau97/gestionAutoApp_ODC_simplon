@@ -19,6 +19,10 @@ const routes: Routes = [
     path: 'formulaire-groupe',
     loadChildren: () => import('./formulaire-groupe/formulaire-groupe.module').then( m => m.FormulaireGroupePageModule)
   },
+  {
+    path: 'recherche',
+    loadChildren: () => import('./recherche/recherche.module').then( m => m.RecherchePageModule)
+  },
 ];
 
 @NgModule({

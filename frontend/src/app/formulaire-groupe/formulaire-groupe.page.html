@@ -1,8 +1,9 @@
-<ion-header>
+<ion-header translucent>
   <ion-toolbar>
-    <ion-icon routerLink="/liste"  name="arrow-back-outline"></ion-icon>
-    <ion-title style="text-align: center;">formulaire</ion-title>
+    <ion-icon routerLink="/home" slot="start" name="arrow-back-outline"></ion-icon>
+    <ion-title>Formulaire</ion-title>
   </ion-toolbar>
+ 
 </ion-header>
 
 <ion-content>
@@ -14,7 +15,7 @@
     <div class="put">
     <label for="">Nombre de groupes :</label><input type="number" /><br />
     <label for="">Nombre de membres :</label><input type="number" /><br />
-      <input class="button" type="submit" value="Enregister">
+    <ion-button class="button" color="primary">Enregistrer</ion-button>
     </div>
   </ion-card>
 </ion-content>
