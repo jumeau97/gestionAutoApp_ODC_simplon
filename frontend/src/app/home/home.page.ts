@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AccueilService } from '../services/accueil.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,10 @@ import { Component } from '@angular/core';
 export class HomePage {
   segment:String="liste";
   eventSeg: any;
-  constructor() {}
+  listApp: any;
+  constructor(private accueilServ: AccueilService) {
+    this.AllApprenant();
+  }
 
   segmentChanged(event:any){
     console.log("event",event.target.value);
@@ -22,6 +26,19 @@ export class HomePage {
       this.segment="liste";
     }
 
+  }
+
+  // La liste des apprenants
+  AllApprenant(){
+    this.accueilServ.getAllApp().subscribe((data:any)=>{
+      console.log("liste des apprenants",data);
+      this.listApp=data;
+    })
+  }
+
+  unread(){
+    console.log("bonjour");
+    
   }
 
 }

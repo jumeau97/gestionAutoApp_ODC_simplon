@@ -9,16 +9,24 @@
 <ion-content>
 
   <ion-card>
-    <div>
-      <h1>Veillez remplir<br> les champs</h1>
-    </div>
-    <div class="label">
-      <ion-label for="nom">Nom:</ion-label><input type="text" name="nom" required><br>
-      <ion-label for="prenom">Prénom:</ion-label><input type="text" name="prenom" required><br>
-      <ion-label for="email">Email:</ion-label><input type="email" name="email" required><br>
-      <ion-label for="telephone">Téléphone:</ion-label><input type="number" name="telephone" required><br>
-
-      <input class="button" type="submit" value="Enregister">
-    </div>
+    <ion-card-title>
+      Veuillez renseignez les champs
+    </ion-card-title>
+    
+    <form #f="ngForm" (ngSubmit)="createApp(f)">
+      <ion-item>
+        <ion-label>Nom et prénom</ion-label>
+        <ion-input type="text" name="nom_complet" placeholder="" (ngModel)="nom_complet"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>E-mail</ion-label>
+        <ion-input type="email" name="email" placeholder="joe@gmail.com" (ngModel)="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Téléphone</ion-label>
+        <ion-input type="phone" name="phone" placeholder="74845276" (ngModel)="phone"></ion-input>
+      </ion-item>
+      <ion-button type="submit" size="small" color="secondary">Enregistrer</ion-button>
+    </form>
   </ion-card>
 </ion-content>

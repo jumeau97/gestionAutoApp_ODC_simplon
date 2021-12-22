@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AccueilService } from '../services/accueil.service';
 
 @Component({
   selector: 'app-formulaire',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormulairePage implements OnInit {
 
-  constructor() { }
+  constructor(private appServ:AccueilService) { }
 
   ngOnInit() {
+  }
+  createApp(data:any){
+    console.log("apprenant", data.value);
+    this.appServ.saveApp(data.value).subscribe((donnee:any)=>{
+      console.log("les données", donnee);
+      
+    });
+    
   }
 
 }
