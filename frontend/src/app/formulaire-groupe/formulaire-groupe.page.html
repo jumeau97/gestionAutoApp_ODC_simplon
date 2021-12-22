@@ -9,13 +9,20 @@
 <ion-content>
 
   <ion-card>
-    <div>
-      <h1>Veillez choisir</h1>
-    </div>
-    <div class="put">
-    <label for="">Nombre de groupes :</label><input type="number" /><br />
-    <label for="">Nombre de membres :</label><input type="number" /><br />
-    <ion-button class="button" color="primary">Enregistrer</ion-button>
-    </div>
+    <ion-card-title style="font-weight: bolder;">Création des groupes d'apprenant</ion-card-title>
+    <ion-card-subtitle style="color: red;">renseignez tous les champs</ion-card-subtitle>
+    <ion-item>
+      <label for="">Cadre du projet : </label>
+      <ion-input type="text" placeholder> </ion-input>
+    </ion-item>
+    <ion-item>
+      <label for="">Nbre de groupe : </label>
+      <ion-input type="number" placeholder> </ion-input>
+    </ion-item>
+    <ion-item>
+      <label for="">Nbre d'apprenant/grp : </label>
+      <ion-input type="number" placeholder> </ion-input>
+    </ion-item>
+    <ion-button type="submit">Créer</ion-button>
   </ion-card>
 </ion-content>
