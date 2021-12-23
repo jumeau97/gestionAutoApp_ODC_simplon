@@ -25,19 +25,6 @@
 #container a {
   text-decoration: none;
 }
-// ion-grid{
-//   display: flex;
-//   flex-direction: row;
-//   width: 100%;
-//   margin: 0;
-// }
-// ion-card{
-//   display: flex;
-//   flex-direction: row;
-//   width: 100%;
-//   margin: 50%;
-
-// }
 
 :root {
   --ion-safe-area-top: 20px;
@@ -48,5 +35,14 @@ ion-col > div {
   background-color: #f7f7f7;
   border: solid 1px #ddd;
   padding: 10px;
+}
+ion-toolbar, ion-segment, ion-segment-button{
+  color: white;
+  --background: #FFA50A;
+  
+}
+ion-icon{
+  font-size: 25px;
+  padding-right: 10px;
 }
 
