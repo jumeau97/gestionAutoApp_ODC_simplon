@@ -10,7 +10,7 @@
 
   <ion-card>
     <ion-card-title>
-      Veuillez renseignez les champs
+      Veuillez renseignez <br> les champs
     </ion-card-title>
     
     <form #f="ngForm" (ngSubmit)="createApp(f)">
@@ -26,7 +26,7 @@
         <ion-label>Téléphone</ion-label>
         <ion-input type="phone" name="phone" placeholder="74845276" (ngModel)="phone"></ion-input>
       </ion-item>
-      <ion-button type="submit" size="small" color="secondary">Enregistrer</ion-button>
+      <ion-button type="submit" size="small" >Enregistrer</ion-button>
     </form>
   </ion-card>
 </ion-content>
