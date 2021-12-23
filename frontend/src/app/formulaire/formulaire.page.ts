@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import { AccueilService } from '../services/accueil.service';
 
 @Component({
@@ -8,7 +9,10 @@ import { AccueilService } from '../services/accueil.service';
 })
 export class FormulairePage implements OnInit {
 
-  constructor(private appServ:AccueilService) { }
+  constructor(
+    private appServ:AccueilService,
+    private toastController:ToastController
+    ) { }
 
   ngOnInit() {
   }
@@ -18,7 +22,18 @@ export class FormulairePage implements OnInit {
       console.log("les données", donnee);
       
     });
-    
+      this.presentToast();
+  
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Apprenant ajouté avec succès',
+      color:'success',
+      duration: 2000,
+      position:'top',
+    });
+    toast.present();
   }
 
 }

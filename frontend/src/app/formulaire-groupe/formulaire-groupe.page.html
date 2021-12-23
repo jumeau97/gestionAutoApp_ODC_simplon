@@ -8,14 +8,23 @@
 
 <ion-content>
 
+<form #f="ngForm" (ngSubmit)="createGroup(f)">
   <ion-card>
-    <div>
-      <h1>Veillez choisir</h1>
-    </div>
-    <div class="put">
-    <label for="">Nombre de groupes :</label><input type="number" /><br />
-    <label for="">Nombre de membres :</label><input type="number" /><br />
-    <ion-button class="button" >Enregistrer</ion-button>
-    </div>
+    <ion-card-title style="font-weight: bolder;">Création des groupes d'apprenant</ion-card-title>
+    <ion-card-subtitle style="color: red;">renseignez tous les champs</ion-card-subtitle>
+    <ion-item>
+      <label for="">Cadre du projet : </label>
+      <ion-input type="text" name="projet" placeholder (ngModel)="projet"> </ion-input>
+    </ion-item>
+    <ion-item>
+      <label for="">Nbre de groupe : </label>
+      <ion-input type="number" name="nbreGroupe" placeholder (ngModel)="nbreGroupe"> </ion-input>
+    </ion-item>
+    <!-- <ion-item>
+      <label for="">Nbre d'apprenant/grp : </label>
+      <ion-input type="number" name="nbreApp" placeholder (ngModel)="nbreApp"> </ion-input>
+    </ion-item> -->
+    <ion-button type="submit">Créer</ion-button>
   </ion-card>
+</form>
 </ion-content>
