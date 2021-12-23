@@ -12,7 +12,7 @@ export class FormulaireGroupePage implements OnInit {
   groupe:[]=[];
   groupes: any;
   newGroupe:any[]=[];
-  // affectation: AffecterAppGroupe = new AffecterAppGroupe();
+  //  affectation: AffecterAppGroupe = new AffecterAppGroupe();
   affectation: any[]=[];
   constructor() { }
 
@@ -20,6 +20,7 @@ export class FormulaireGroupePage implements OnInit {
   }
 
   createGroup(data:any){
+    this.affectation=[];
     console.log("Création du groupe", data.value);
     this.nbreGroup=data.value.nbreGroupe;
     const listeComplet=10;
@@ -48,9 +49,44 @@ export class FormulaireGroupePage implements OnInit {
 
     ];
 
+   const values=this.listApp;
+   const sums=this.nbreGroup;
+   let person = this.listApp;
     
-  
+   let random = person.sort(() => Math.random() - 0.5);
+   console.log(random);
+
+   function chunk(array, size){
+      if(array.length <= size){
+        return[array];
+      }
+      return [array.slice(0, size), ...chunk(array.slice(size),size)]
+   }
+
+   var team= chunk(random, sums);
+
+   for (let i = 0; i < team.length; i++) {
+    // output.innerHTML += `<p> Team-${i + 1}: ${team[i]} </p>`;
+    // console.log("Groupe",i+1,team[i] );
+    for(let j= 0; j< team[i].length; j++){
+      // console.log("groupe",i+1,team[i][j]);
+      
+      this.affectation.push({
+        group:i+1,
+        apprenant:team[i][j]
+      });
+    }   
+  }
+
+  console.log("affectation", this.affectation);
+
+  // =============================================================================
+ 
+
+   
     
   }
+
+
 
 }

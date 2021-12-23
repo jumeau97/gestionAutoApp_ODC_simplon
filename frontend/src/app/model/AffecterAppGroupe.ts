@@ -4,5 +4,5 @@ import { Groupe } from "./Groupe";
 export class AffecterAppGroupe {
     dateAff:Date;
     apprenant:Apprenant;
-    groupe:Groupe;
+    groupe:number;
 }
