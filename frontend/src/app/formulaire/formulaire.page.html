@@ -1,7 +1,7 @@
 <ion-header translucent>
   <ion-toolbar>
     <ion-icon routerLink="/home" slot="start" name="arrow-back-outline"></ion-icon>
-    <ion-title>Formulaire</ion-title>
+    <ion-title>GESTAPP</ion-title>
   </ion-toolbar>
  
 </ion-header>
@@ -9,8 +9,8 @@
 <ion-content>
 
   <ion-card>
-    <ion-card-title>
-      Veuillez renseignez <br> les champs
+    <ion-card-title class="ion-no-padding">
+      <h5><strong>renseignez les champs</strong></h5>
     </ion-card-title>
     
     <form #f="ngForm" (ngSubmit)="createApp(f)">
