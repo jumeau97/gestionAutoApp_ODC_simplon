@@ -27,6 +27,7 @@ public class GroupeServiceImple implements GroupeService{
     public Groupe updateGroupe(Groupe groupe, Long id) {
         Groupe modiGroup=repositoryGroupe.getById(id);
         modiGroup.setNumgroupe(groupe.getNumgroupe());
+        modiGroup.setLibelle(groupe.getLibelle());
         return repositoryGroupe.save(modiGroup) ;
     }
 

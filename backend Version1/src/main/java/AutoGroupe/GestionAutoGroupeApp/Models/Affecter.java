@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
-@Entity
+//@Entity
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
@@ -20,13 +20,13 @@ public class Affecter implements Serializable {
     private long id;
     @Temporal(TemporalType.DATE)
     private Date dateaff;
-    @ManyToOne
+    /*@ManyToOne
     @JoinColumn(name = "groupe_id")
     private Groupe groupe;
 
     @ManyToOne
     @JoinColumn(name = "apprenant_id")
-    private Apprenant apprenant;
+    private Apprenant apprenant;*/
 
 
 
