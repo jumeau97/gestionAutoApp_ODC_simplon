@@ -17,9 +17,10 @@ public class Groupe implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private long numgroupe;
+    private String libelle;
 
-
-
-
+    @ManyToOne
+    @JoinColumn(name = "apprenant_id")
+    private Apprenant apprenant;
 
 }
