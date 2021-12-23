@@ -41,4 +41,14 @@ export class HomePage {
     
   }
 
+  //supprimer un apprenannt
+  deleteApprenant(raw:any){
+    console.log(raw);
+    this.accueilServ.deleteApp(raw.id)
+    .subscribe(res=>{
+      alert(" voulez vous supprimer")
+      this.AllApprenant();
+    })
+  }
+
 }

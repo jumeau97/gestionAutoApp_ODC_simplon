@@ -2,6 +2,7 @@ package AutoGroupe.GestionAutoGroupeApp.Controls;
 
 import AutoGroupe.GestionAutoGroupeApp.Models.Apprenant;
 import AutoGroupe.GestionAutoGroupeApp.Models.Groupe;
+import AutoGroupe.GestionAutoGroupeApp.Models.Payloads.Affectation;
 import AutoGroupe.GestionAutoGroupeApp.Services.GroupeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,9 +15,11 @@ import java.util.List;
 public class ControlGoupe {
     @Autowired
     GroupeService groupeService;
+
     @PostMapping(value = "/AddGroup")
-    public Groupe addGroupe(@RequestBody Groupe groupe) {
-        return groupeService.addGroupe(groupe);
+    public void addGroupe(@RequestBody List<Groupe> groupe) {
+        System.out.println(groupe);
+          groupeService.addGroupe(groupe);
     }
     //modifier Groupe
     @PutMapping(value = "/updatGroupe/{id}")

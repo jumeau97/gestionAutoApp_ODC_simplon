@@ -1,7 +1,7 @@
 <ion-header [translucent]="true" class="ion-no-border" >
   <ion-toolbar >
     <ion-title>
-      Segments
+      GESTAPP
     </ion-title><ion-icon routerLink="/recherche"  slot="end" name="search-outline"></ion-icon>
   </ion-toolbar>
 </ion-header>
@@ -48,7 +48,7 @@
     <ion-item-option color="primary" (click)="unread(item)">
       <ion-icon name="create-outline"></ion-icon>
     </ion-item-option>
-    <ion-item-option color="danger" (click)="unread(item)">
+    <ion-item-option color="danger" (click)="deleteApprenant(l)">
       <ion-icon name="trash-outline"></ion-icon>
     </ion-item-option>
   </ion-item-options>
@@ -62,16 +62,22 @@
     <ion-row>
       <ion-col size="6">
         <ion-card>
-          <ion-card-content>bonjour</ion-card-content>
+          <ion-card-content>Groupe 1</ion-card-content>
         </ion-card>
       </ion-col>
       <ion-col size="6">
         <ion-card>
-          <ion-card-content>bonjour</ion-card-content>
+          <ion-card-content>Groupe 2</ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="download-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </div>
 
 

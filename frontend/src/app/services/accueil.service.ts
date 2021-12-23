@@ -15,6 +15,19 @@ host=environment.host;
   }
 
   saveApp(data:any){
-    return this.http.post(this.host+"/AddApp", data)
+    return this.http.post(this.host+"/AddApp", data);
+  }
+
+  //service group ajout
+  saveListGroup(affectation:any){
+    return this.http.post(this.host+"/AddGroup", affectation);
+  }
+
+  updateApp(data:any, id:number){
+    return this.http.put(this.host+"/updatApp/"+id,data)
+
+  }
+  deleteApp(id:number){
+    return this.http.delete(this.host+"/DeleteApp/"+id)
   }
 }
