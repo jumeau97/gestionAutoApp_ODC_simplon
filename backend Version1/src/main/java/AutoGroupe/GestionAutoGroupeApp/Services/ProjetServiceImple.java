@@ -1,4 +1,4 @@
-package AutoGroupe.GestionAutoGroupeApp.Services;
+/*package AutoGroupe.GestionAutoGroupeApp.Services;
 
 import AutoGroupe.GestionAutoGroupeApp.Models.Projet;
 import AutoGroupe.GestionAutoGroupeApp.Repository.RepositoryProjet;
@@ -41,3 +41,4 @@ public class ProjetServiceImple implements ProjetService {
         return repositoryProjet.getById(id);
     }
 }
+*/

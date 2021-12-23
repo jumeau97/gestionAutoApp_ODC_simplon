@@ -1,4 +1,4 @@
-package AutoGroupe.GestionAutoGroupeApp.Controls;
+/*package AutoGroupe.GestionAutoGroupeApp.Controls;
 
 import AutoGroupe.GestionAutoGroupeApp.Models.Projet;
 import AutoGroupe.GestionAutoGroupeApp.Services.ProjetService;
@@ -39,3 +39,4 @@ public class ControlProjet {
         return projetService.ProjetById(id);
     }
 }
+*/
