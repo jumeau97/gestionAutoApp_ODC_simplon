@@ -1,4 +1,7 @@
+import { Apprenant } from "./Apprenant";
+
 export class Groupe{
-    id:number;
+    libelle:string;
     numgroupe:string;
+    apprenant:Apprenant;
 }

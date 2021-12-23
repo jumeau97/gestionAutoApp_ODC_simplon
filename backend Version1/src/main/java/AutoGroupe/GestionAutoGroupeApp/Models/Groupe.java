@@ -20,7 +20,38 @@ public class Groupe implements Serializable {
     private String libelle;
 
     @ManyToOne
-    @JoinColumn(name = "apprenant_id")
+    //@JoinColumn(name = "apprenant_id")
     private Apprenant apprenant;
 
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getNumgroupe() {
+        return numgroupe;
+    }
+
+    public void setNumgroupe(long numgroupe) {
+        this.numgroupe = numgroupe;
+    }
+
+    public String getLibelle() {
+        return libelle;
+    }
+
+    public void setLibelle(String libelle) {
+        this.libelle = libelle;
+    }
+
+    public Apprenant getApprenant() {
+        return apprenant;
+    }
+
+    public void setApprenant(Apprenant apprenant) {
+        this.apprenant = apprenant;
+    }
 }

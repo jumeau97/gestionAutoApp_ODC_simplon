@@ -2,11 +2,13 @@ package AutoGroupe.GestionAutoGroupeApp.Services;
 
 import AutoGroupe.GestionAutoGroupeApp.Models.Apprenant;
 import AutoGroupe.GestionAutoGroupeApp.Models.Groupe;
+import AutoGroupe.GestionAutoGroupeApp.Models.Payloads.Affectation;
 import AutoGroupe.GestionAutoGroupeApp.Repository.RepositoryApprenant;
 import AutoGroupe.GestionAutoGroupeApp.Repository.RepositoryGroupe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,8 +21,16 @@ public class GroupeServiceImple implements GroupeService{
     @Autowired
     RepositoryApprenant repositoryApprenant;
     @Override
-    public Groupe addGroupe(Groupe groupe) {
-        return repositoryGroupe.save(groupe);
+    public void addGroupe(List<Groupe> aff) {
+       // List<Groupe> list= new ArrayList<>();
+        for(int i=0; i<aff.size(); i++){
+
+            Groupe group= new Groupe();
+            group.setLibelle(aff.get(i).getLibelle());
+            group.setApprenant(aff.get(i).getApprenant());
+            repositoryGroupe.save(group);
+        }
+
     }
 
     @Override

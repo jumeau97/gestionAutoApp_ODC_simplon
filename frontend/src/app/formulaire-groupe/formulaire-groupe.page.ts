@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AffecterAppGroupe } from '../model/AffecterAppGroupe';
+import { Groupe } from '../model/Groupe';
+import { AccueilService } from '../services/accueil.service';
 
 @Component({
   selector: 'app-formulaire-groupe',
@@ -14,7 +16,8 @@ export class FormulaireGroupePage implements OnInit {
   newGroupe:any[]=[];
   //  affectation: AffecterAppGroupe = new AffecterAppGroupe();
   affectation: any[]=[];
-  constructor() { }
+  affectations: AffecterAppGroupe = new AffecterAppGroupe();
+  constructor(private accServ:AccueilService) { }
 
   ngOnInit() {
   }
@@ -25,16 +28,16 @@ export class FormulaireGroupePage implements OnInit {
     this.nbreGroup=data.value.nbreGroupe;
     const listeComplet=10;
     this.listApp=[
-      {nom_complet:"Alassane SANOGO", email:"alass@gmail.com", telephone:"telephone"},
-      {nom_complet:"Awa KEITA", email:"awa@gmail.com", telephone:"telephone"},
-      {nom_complet:"Mamoutou BAGAYOGO", email:"alass@gmail.com", telephone:"telephone"},
-      {nom_complet:"Modibo SANGARE", email:"alass@gmail.com", telephone:"telephone"},
-      {nom_complet:"Ibrahima KONATE", email:"alass@gmail.com", telephone:"telephone"},
-      {nom_complet:"Mamadou TRAORE", email:"alass@gmail.com", telephone:"telephone"},
-      {nom_complet:"Seydou AFFOGNON", email:"alass@gmail.com", telephone:"telephone"},
-      {nom_complet:"Ibrahim KELLY", email:"alass@gmail.com", telephone:"telephone"},
-      {nom_complet:"Adama COULIBALY", email:"alass@gmail.com", telephone:"telephone"},
-      {nom_complet:"Abdoulaye DIARRA", email:"alass@gmail.com", telephone:"telephone"},
+      {id:1,nom_complet:"Alassane SANOGO", email:"alass@gmail.com", telephone:"telephone"},
+      {id:2,nom_complet:"Awa KEITA", email:"awa@gmail.com", telephone:"telephone"},
+      {id:3,nom_complet:"Mamoutou BAGAYOGO", email:"alass@gmail.com", telephone:"telephone"},
+      {id:4,nom_complet:"Modibo SANGARE", email:"alass@gmail.com", telephone:"telephone"},
+      {id:5,nom_complet:"Ibrahima KONATE", email:"alass@gmail.com", telephone:"telephone"},
+      {id:6,nom_complet:"Mamadou TRAORE", email:"alass@gmail.com", telephone:"telephone"},
+      {id:7,nom_complet:"Seydou AFFOGNON", email:"alass@gmail.com", telephone:"telephone"},
+      {id:8,nom_complet:"Ibrahim KELLY", email:"alass@gmail.com", telephone:"telephone"},
+      {id:9,nom_complet:"Adama COULIBALY", email:"alass@gmail.com", telephone:"telephone"},
+      {id:10,nom_complet:"Abdoulaye DIARRA", email:"alass@gmail.com", telephone:"telephone"},
       
     ];
 
@@ -72,17 +75,23 @@ export class FormulaireGroupePage implements OnInit {
       // console.log("groupe",i+1,team[i][j]);
       
       this.affectation.push({
-        group:i+1,
-        apprenant:team[i][j]
+        "libelle":"groupe"+(i+1),
+        "numgroupe":"",
+        "apprenant":team[i][j]
       });
     }   
   }
 
+  this.affectations.groupe=this.affectation
   console.log("affectation", this.affectation);
 
+  
   // =============================================================================
  
-
+  this.accServ.saveListGroup(this.affectation).subscribe((data)=>{
+    console.log(data);
+    
+  });
    
     
   }
