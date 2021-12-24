@@ -59,15 +59,10 @@
 <!-- groupe -->
 <div *ngIf="segment=='groupe'">
   <ion-grid>
-    <ion-row>
-      <ion-col size="6">
-        <ion-card>
-          <ion-card-content>Groupe 1</ion-card-content>
-        </ion-card>
-      </ion-col>
-      <ion-col size="6">
-        <ion-card>
-          <ion-card-content>Groupe 2</ion-card-content>
+    <ion-row >
+      <ion-col size="6" *ngFor="let g of groupe">
+        <ion-card (click)="groupSelect(g)">
+          <ion-card-content >{{g.libelle}}</ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
