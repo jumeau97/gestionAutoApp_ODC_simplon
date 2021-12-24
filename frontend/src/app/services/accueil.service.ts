@@ -7,6 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class AccueilService {
 host=environment.host;
+  group: any;
   constructor(private http:HttpClient) { }
 
   //La liste globale des apprenants
@@ -29,5 +30,23 @@ host=environment.host;
   }
   deleteApp(id:number){
     return this.http.delete(this.host+"/DeleteApp/"+id)
+  }
+
+  //liste groupe
+  listGroup(){
+   return  this.http.get(this.host+"/ListGroup");
+  }
+
+  //groupe par libelle
+  groupByLibelle(data){
+    return this.http.get(this.host+"/lib/"+data);
+  }
+
+  setGroup(data:any){
+    this.group=data;
+  }
+
+  getGroup(){
+    return this.group;
   }
 }

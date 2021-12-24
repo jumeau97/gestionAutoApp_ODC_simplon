@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -58,6 +59,9 @@ public class GroupeServiceImple implements GroupeService{
         return repositoryGroupe.findById(id).get();
     }
 
-
+    @Override
+    public List<Groupe> listGroupeLib(String lib) {
+        return repositoryGroupe.findByLib(lib);
+    }
 }
 

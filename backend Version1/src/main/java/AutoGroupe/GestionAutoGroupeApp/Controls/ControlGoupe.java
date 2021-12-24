@@ -46,5 +46,13 @@ public class ControlGoupe {
         return groupeService.recupererGroupParSonId(id);
     }
 
+    @GetMapping("/lib/{key}")
+    public List<Groupe> listByLib(@RequestBody @PathVariable(value = "key") String key){
+        //System.out.println(key);
+        return groupeService.listGroupeLib(key);
+    }
+
+
+
 
 }
