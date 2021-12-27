@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastController } from '@ionic/angular';
 import { AffecterAppGroupe } from '../model/AffecterAppGroupe';
 import { Groupe } from '../model/Groupe';
 import { AccueilService } from '../services/accueil.service';
@@ -17,7 +18,10 @@ export class FormulaireGroupePage implements OnInit {
   //  affectation: AffecterAppGroupe = new AffecterAppGroupe();
   affectation: any[]=[];
   affectations: AffecterAppGroupe = new AffecterAppGroupe();
-  constructor(private accServ:AccueilService) { }
+  constructor(
+    private accServ:AccueilService,
+    private toastController:ToastController
+    ) { }
 
   ngOnInit() {
   }
@@ -90,10 +94,21 @@ export class FormulaireGroupePage implements OnInit {
  
   this.accServ.saveListGroup(this.affectation).subscribe((data)=>{
     console.log(data);
+    this.presentToast();
     
   });
    
     
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Groupe crée avec succès',
+      color:'success',
+      duration: 2000,
+      position:'top',
+    });
+    toast.present();
   }
 
 
